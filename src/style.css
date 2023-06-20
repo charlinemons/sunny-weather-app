@@ -9,12 +9,33 @@ body {
   height: 100vh;
 }
 
-.weather-app {
+h1 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 24px;
+  color: #313341;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #9a938c;
+}
+
+.weather-app-wrapper {
   max-width: 800px;
+  margin: 40px auto;
+}
+
+.weather-app {
   background-color: rgb(255 255 255 / 30%);
   padding: 50px;
   border-radius: 10px;
-  margin: 40px auto;
+}
+
+#condition {
+  text-transform: capitalize;
 }
 
 .btn-primary {
@@ -68,20 +89,6 @@ input::placeholder {
 
 .result {
   padding: 20px 0;
-}
-
-h1 {
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 24px;
-  color: #313341;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  color: #9a938c;
 }
 
 section#current-weather {
