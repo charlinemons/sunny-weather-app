@@ -13,9 +13,64 @@
     />
   </head>
   <body>
-    <div class="container">
-      <h1>Coucou</h1>
+    <div class="wrapper">
+      <div class="weather-app">
+
+        <!-- form -->
+        <!-- <form id="search-form">
+          <div class="row">
+            <div class="col-md-8">
+              <input class="placeholder" type="text" id="city-input" placeholder="Enter a city" />
+            </div>
+            <div class="col-md-2">
+              <input class="btn-primary col-md-2 submit" type="submit" value="Search" />
+            </div>
+            <div class="col-md-2">
+              <input id="current" class="btn-primary col-md-2 current" type="submit" value="Current" />
+            </div>
+          </div>
+        </form> -->
+
+        <!-- result -->
+        <div class="result">
+          <h1 id="city">Montreal</h1>
+          <h2 class="currentDate">Thu, Jun 01 4:50 PM</h2><br>
+          <!-- Current weather -->
+          <section id="current-weather">
+            <div class="current-weather">
+              <img src="assets/sunny.png" alt="sunny" width="100" height="100">
+              <div class="degree">
+                <h3 id="temperature" class="temperature">22
+                  <span class="units">
+                    <a href="#" id="celsius">°C</a> | 
+                    <a href="#" id="fahrenheit">°F</a>
+                  </span>
+                </h3>
+                <span id="current-weather" class="current-weather">Sunny</span>
+              </div>
+            </div>
+            <div class="details">
+              <ul>
+                <li class="row-holder">Precipitation: <span id="precipitation"></span> %</li>
+                <li class="row-holder">Humidity: <span id="humidity"></span>%</li>
+                <li class="row-holder">Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </section>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+    <small>
+          <a
+            href="https://github.com/charlinemons/weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Charline Mons
+    </small>
     <script src="src/app.js"></script>
   </body>
 </html>
