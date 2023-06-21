@@ -38,6 +38,13 @@ h2 {
   text-transform: capitalize;
 }
 
+#date {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+  color: #303345;
+}
+
 .btn-primary {
   background: rgba(255, 255, 255, 0.36);
   border: 0.5px solid #303345;
@@ -128,12 +135,6 @@ section#current-weather {
 }
 .units a {
   text-decoration: none;
-  color: #303345;
-}
-.currentDate {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 17px;
   color: #303345;
 }
 
