@@ -25,7 +25,8 @@
                   class="placeholder"
                   type="text"
                   id="city-input"
-                  placeholder="Enter a city"
+                  autocomplete="off"
+                  placeholder="Type a city"
                 />
               </div>
               <div class="col-md-2">
@@ -48,8 +49,12 @@
           <!-- result -->
           <div class="result">
             <h1 id="city">Montreal</h1>
-            <h2 id="date">Thu, Jun 01 4:50 PM</h2>
-            <br />
+            <p class="description">
+              <span id="date">Thu, Jun 01 4:50 PM></span><br /><span
+                id="condition"
+                >Sunny</span
+              >
+            </p>
             <!-- Current weather -->
             <section id="current-weather">
               <div class="current-weather">
@@ -62,18 +67,17 @@
                       <a href="#" id="fahrenheit">°F</a>
                     </span>
                   </h3>
-                  <span id="condition">Sunny</span>
                 </div>
               </div>
               <div class="details">
                 <ul>
                   <li class="row-holder">
-                    Precipitation: <span id="precipitation"></span> %
-                  </li>
-                  <li class="row-holder">
                     Humidity: <span id="humidity"></span>%
                   </li>
                   <li class="row-holder">Wind: <span id="wind"></span> km/h</li>
+                  <li class="row-holder">
+                    Feels like: <span id="feels"></span> °C
+                  </li>
                 </ul>
               </div>
             </section>
