@@ -45,6 +45,13 @@ h2 {
   color: #303345;
 }
 
+#temperature {
+  font-weight: 700;
+  font-size: 85px;
+  line-height: 60px;
+  color: #303345;
+}
+
 .btn-primary {
   background: rgba(255, 255, 255, 0.36);
   border: 0.5px solid #303345;
@@ -121,26 +128,26 @@ section#current-weather {
   color: #fbca1c;
   padding: 0;
 }
-.temperature {
-  font-weight: 700;
-  font-size: 85px;
-  line-height: 60px;
-  color: #303345;
-}
-
-.units {
-  position: relative;
-  top: -42px;
-  font-size: 28px;
-}
-.units a {
-  text-decoration: none;
-  color: #303345;
+.d-flex {
+  align-items: center;
 }
 
 .degree {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+}
+
+.units {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.units a {
+  text-decoration: none;
+  color: #303345;
+  &.active {
+    font-weight: 700;
+  }
 }
 
 .details,
