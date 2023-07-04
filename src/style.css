@@ -7,27 +7,26 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  font-family: "Inter", sans-serif !important;
 }
 
 h1 {
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 24px;
-  /* color: #313341; */
-  color: #5741d7;
+  font-weight: 500 !important;
+  font-size: 28px !important;
+  line-height: 24px !important;
+  color: #313341 !important;
 }
 
 h2 {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  /* color: #9a938c; */
-  color: #4a79f3;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  color: #303345 !important;
 }
 
 .weather-app-wrapper {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 60px auto;
 }
 
 .weather-app {
@@ -64,9 +63,9 @@ h2 {
   width: 100%;
 }
 .btn-primary:hover {
-  background-color: #303345;
-  border: 0.5px solid #303345;
-  color: white;
+  background-color: #ed934c;
+  border: 0.5px solid #ed934c;
+  color: 303345;
 }
 
 .btn-primary.current {
@@ -76,6 +75,9 @@ h2 {
 
 input.btn-primary {
   width: 100%;
+  color: white;
+  background-color: #303345;
+  border: 0.5px solid #303345;
 }
 
 input.placeholder {
@@ -163,14 +165,12 @@ section#current-weather {
 ul li {
   list-style-type: none;
 }
-.row-holder {
+.col-holder {
   background: rgba(255, 255, 255, 0.36);
-  /* border: 0.5px solid rgba(255, 255, 255, 0.5); */
   border-radius: 10px;
-  padding: 16px 11px;
+  padding: 10px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 8px;
   color: #303345;
   margin-bottom: 5px;
 }
@@ -190,11 +190,14 @@ ul li {
   align-items: center;
   justify-items: start;
 }
-
-.weather-forcast {
+div#forecast {
   text-align: center;
+  padding: 0px 10px;
 }
 
+.col-2.forecast-days.col-holder {
+  width: 13%;
+}
 .weather-forecast-date {
   font-size: 16px;
   opacity: 0.6;
@@ -208,8 +211,15 @@ span.weather-forecast-temp-min {
   opacity: 0.6;
 }
 
-.footer {
+footer {
+  font-size: 13px;
   text-align: center;
-  font-size: 12px;
-  padding-bottom: 5px;
+  padding: 20px;
+}
+a.links {
+  color: #303345;
+}
+
+.links:hover {
+  color: #ed934c !important;
 }

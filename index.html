@@ -11,6 +11,12 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -36,14 +42,6 @@
                   value="Search"
                 />
               </div>
-              <!-- <div class="col-md-2">
-                <input
-                  id="current"
-                  class="btn-primary col-md-2 current"
-                  type="submit"
-                  value="Current"
-                />
-              </div> -->
             </div>
           </form>
           <!-- start result -->
@@ -52,46 +50,68 @@
             <p class="description">
               <span id="date"></span><br /><span id="condition"></span>
             </p>
-          </div>
-          <!-- end result -->
-          <!-- start current weather -->
-          <div class="row">
-            <div class="col-6">
-              <div class="d-flex weather-temperature">
-                <img src="" alt="" id="icon" />
-                <div class="degree">
-                  <strong id="temperature"></strong>
-                  <span class="units">
-                    <a href="#" id="celsius">°C</a> |
-                    <a href="#" id="fahrenheit">°F</a>
-                  </span>
+            <!-- start current weather -->
+            <div class="row">
+              <div class="col-6">
+                <div class="d-flex weather-temperature">
+                  <img src="" alt="" id="icon" />
+                  <div class="degree">
+                    <strong id="temperature"></strong>
+                    <span class="units">
+                      <a href="#" id="celsius">°C</a> |
+                      <a href="#" id="fahrenheit">°F</a>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="details">
-                <ul>
-                  <li class="row-holder">
-                    Humidity: <span id="humidity"></span>%
-                  </li>
-                  <li class="row-holder">Wind: <span id="wind"></span> km/h</li>
-                  <li class="row-holder">
-                    Feels like: <span id="feels"></span> °C
-                  </li>
-                </ul>
+              <div class="col-6">
+                <div class="details">
+                  <ul>
+                    <li class="col-holder">
+                      Humidity: <span id="humidity"></span>%
+                    </li>
+                    <li class="col-holder">
+                      Wind: <span id="wind"></span> km/h
+                    </li>
+                    <li class="col-holder">
+                      Feels like: <span id="feels"></span> °C
+                    </li>
+                  </ul>
+                </div>
               </div>
+              <!-- end current weather -->
             </div>
-            <!-- end current weather -->
+            <!-- end result -->
           </div>
-          <h1>Next 7 days</h1>
-          <div id="forecast" class="weather-forecast"></div>
+          <div class="next-days">
+            <h1>Next 7 days</h1>
+            <div id="forecast" class="weather-forecast"></div>
+          </div>
         </div>
-        <small>
-          <a href="https://github.com/charlinemons/weather-app" target="_blank"
-            >Open-source code</a
+        <footer>
+          This project was coded by
+          <a
+            class="links"
+            href="https://www.linkedin.com/in/charline-mons/"
+            target="_blank"
+            >Charline Mons</a
           >
-          by Charline Mons
-        </small>
+          and is
+          <a
+            class="links"
+            href="https://github.com/charlinemons/weather-app"
+            target="_blank"
+            >open-sourced on GitHub</a
+          >
+          and
+          <a
+            class="links"
+            href="https://steady-marshmallow-1dd2fa.netlify.app"
+            target="_blank"
+            rel=""
+            >hosted on Netlify</a
+          >
+        </footer>
       </div>
     </div>
     <script src="src/app.js"></script>

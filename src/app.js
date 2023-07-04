@@ -1,13 +1,23 @@
+// function formatDate(timestamp) {
+//   // get current time
+//   let date = new Date(timestamp);
+//   let hours = date.getHours();
+//   let minutes = date.getMinutes();
+//   let meridiem = hours >= 12 ? "PM" : "AM"; // Determine AM or PM
+
+//   // Convert to 12-hour format
+//   hours = hours % 12;
+//   hours = hours ? hours : 12; // 0 should be displayed as 12
 function formatDate(timestamp) {
-  // get current time
   let date = new Date(timestamp);
   let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = date.getMinutes();
-  let meridiem = hours >= 12 ? "PM" : "AM"; // Determine AM or PM
-
-  // Convert to 12-hour format
-  hours = hours % 12;
-  hours = hours ? hours : 12; // 0 should be displayed as 12
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   // get current date
   let numberDate = now.getDate();
@@ -39,7 +49,7 @@ function formatDate(timestamp) {
   let month = months[now.getMonth()];
 
   // return `${day}, ${month} ${numberDate} ${hours}:${minutes}`;
-  return `${day}, ${hours}:${minutes} ${meridiem}`;
+  return `${day}, ${hours}:${minutes} `;
 }
 // current date and hour
 let now = new Date();
@@ -52,6 +62,7 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
+
 //Display Forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -60,11 +71,11 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         `
-      <div class="col-2">
+      <div class="col-2 forecast-days col-holder">
         <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temp-max">${Math.round(
@@ -74,10 +85,9 @@ function displayForecast(response) {
             forecastDay.temperature.minimum
           )}°</span>
         </div>
-        ${index}
         <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
           forecastDay.condition.icon
-        }.png" alt="" id="icon" />
+        }.png" id="icon-forecast" width="40px" />
       </div>
 `;
     }
