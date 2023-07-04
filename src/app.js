@@ -1,8 +1,3 @@
-// current date and hour
-let now = new Date();
-
-let timestamp = Date.now();
-
 function formatDate(timestamp) {
   // get current time
   let date = new Date(timestamp);
@@ -45,6 +40,52 @@ function formatDate(timestamp) {
 
   // return `${day}, ${month} ${numberDate} ${hours}:${minutes}`;
   return `${day}, ${hours}:${minutes} ${meridiem}`;
+}
+// current date and hour
+let now = new Date();
+let timestamp = Date.now();
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temp-max">20°</span>
+            <span class="weather-forecast-temp-min">12°</span>
+        </div>
+        <img src="" alt="" id="icon" />
+        </div>`;
+
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">Fri</div>
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temp-max">20°</span>
+            <span class="weather-forecast-temp-min">12°</span>
+        </div>
+        <img src="" alt="" id="icon" />
+        </div>`;
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
 }
 
 function displayTemperature(response) {
@@ -114,3 +155,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Montreal");
+displayForecast();
