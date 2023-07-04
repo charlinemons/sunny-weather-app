@@ -45,35 +45,42 @@ function formatDate(timestamp) {
 let now = new Date();
 let timestamp = Date.now();
 
-//Display Forecast weather
+// Display days forecast
+function formatDay(timestamp) {
+  let dateForecast = new Date(timestamp * 1000);
+  let day = dateForecast.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+//Display Forecast
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temp-max">20°</span>
-          <span class="weather-forecast-temp-min">12°</span>
+          <span class="weather-forecast-temp-max">${Math.round(
+            forecastDay.temperature.maximum
+          )}°</span>
+          <span class="weather-forecast-temp-min">${Math.round(
+            forecastDay.temperature.minimum
+          )}°</span>
         </div>
-        <img src="" alt="" id="icon" />
+        ${index}
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+          forecastDay.condition.icon
+        }.png" alt="" id="icon" />
       </div>
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
