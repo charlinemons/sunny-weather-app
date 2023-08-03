@@ -2,13 +2,15 @@ body {
   background: linear-gradient(
     44.8deg,
     rgba(237, 147, 76) 15%,
-    rgba(255, 221, 136, 0.28) 75%
+    rgba(255, 221, 136, 0.28) 85%
   );
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
   font-family: "Inter", sans-serif !important;
+  min-height: 100vh;
+  margin: 0;
 }
+
 
 h1 {
   font-weight: 500 !important;
@@ -23,6 +25,7 @@ h2 {
   line-height: 18px !important;
   color: #303345 !important;
 }
+
 
 .weather-app-wrapper {
   max-width: 800px;
@@ -104,8 +107,37 @@ input::placeholder {
 
 .row {
   justify-content: space-between;
+  @media (max-width: 820px) {
+    flex-direction: column;
+  }
 }
 
+@media (max-width: 820px) {
+  .col-md-8 {
+    width: 63%!important;
+    padding: 0px!important;
+  }
+}
+
+@media (max-width: 820px) {
+  .col-md-4 {
+    width: 35%!important;
+    padding: 0px!important;
+  }
+}
+
+@media (max-width: 820px) {
+  .row.mobile {
+    flex-direction: row;
+    gap: 5px;
+  }
+}
+
+.col-6 {
+  @media (max-width: 820px) {
+    width: 100% !important;
+  }
+}
 .current-temp {
   padding: 20px 0;
 }
@@ -165,6 +197,13 @@ section#current-weather {
 ul li {
   list-style-type: none;
 }
+
+ul {
+  @media (max-width: 820px) {
+    margin-block-start:: 0px !important;
+    padding-inline-start: 0px!important;
+  }
+}
 .col-holder {
   background: rgba(255, 255, 255, 0.36);
   border-radius: 10px;
@@ -197,6 +236,12 @@ div#forecast {
 
 .col-2.forecast-days.col-holder {
   width: 13%;
+  @media (max-width: 820px) {
+    width: 100%!important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 .weather-forecast-date {
   font-size: 16px;
@@ -223,3 +268,6 @@ a.links {
 .links:hover {
   color: #ed934c !important;
 }
+
+
+
