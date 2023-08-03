@@ -223,10 +223,12 @@ footer {
 }
 a.links {
   color: #303345;
+  text-decoration: none;;
 }
 
 .links:hover {
   color: #ed934c !important;
+  font-weight: 600;
 }
 
 
@@ -253,6 +255,9 @@ a.links {
   ul {
     margin-block-start:: 0px !important;
     padding-inline-start: 0px!important;
+  }
+  .weather-forecast-temperatures {
+    font-size: 16px;
   }
   .col-2.forecast-days.col-holder {
     width: 100%!important;
